@@ -1,0 +1,8 @@
+body{
+    background-color: #fdfbee;
+    text-align: center;
+}
+
+#ingredients-list, #directions-list{
+    list-style-position: inside;
+}
