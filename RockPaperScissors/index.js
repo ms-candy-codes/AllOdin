@@ -54,16 +54,40 @@ function playRound(humanChoice, compChoice) {
 console.log("Starting the game...");
 
 // Get player and computer choices for this round
-let playerChoice = getHumanChoice();
-let compChoice = computerChoice();
+// let playerChoice = getHumanChoice();
+// let compChoice = computerChoice();
 
-console.log("Player chose: " + playerChoice);
-console.log("Computer chose: " + compChoice);
+// console.log("Player chose: " + playerChoice);
+// console.log("Computer chose: " + compChoice);
 
-let result = playRound(playerChoice, compChoice);
-console.log(result);
-console.log(result);
-console.log(playRound(playerChoice, compChoice));
+// let result = playRound(playerChoice, compChoice);
+// console.log(result);
+// console.log(result);
+// console.log(playRound(playerChoice, compChoice));
 
-console.log("Computer score: " + computerScore);
-console.log("Human score: " + playerScore);
+// console.log("Computer score: " + computerScore);
+// console.log("Human score: " + playerScore);
+
+
+function theGame(){
+    let playerChoice1 = getHumanChoice();
+    let compChoice1 = computerChoice();
+    console.log("Player chose: " + playerChoice1);
+    console.log("Computer chose: " + compChoice1);
+    let result = playRound(playerChoice1, compChoice1);
+    console.log(result);
+    console.log("Score - Player: " + playerScore + ", Computer: " + computerScore);
+}
+theGame();
+theGame();
+theGame();
+theGame();
+theGame();
+
+if(playerScore > computerScore){
+    console.log("player wins!");
+}else if(playerScore < computerScore){
+    console.log("Sorry Computer wins!");
+}else{
+    console.lot("Oh hey its a tie!");
+}
