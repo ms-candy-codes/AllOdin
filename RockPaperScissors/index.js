@@ -1,20 +1,66 @@
-function computerChoice(){
-    let choice = Math.floor(Math.random()* 3 + 1);
-    if(choice === 1){
-        return "Computer chose Rock";
-    }else if(choice === 2){
-        return "Computer chose paper";
-    }else if(choice === 3){
-        return "Computer chose scissors";
-    }else{
+let playerScore = 0;
+let computerScore = 0;
+
+function computerChoice() {
+    let choice = Math.floor(Math.random() * 3 + 1);
+    if (choice === 1) {
+        return "rock";
+    } else if (choice === 2) {
+        return "paper";
+    } else if (choice === 3) {
+        return "scissors";
+    } else {
         console.log("ERROR");
     }
 }
 
-function getHumanChoice(choice = "Please input something"){
-    choice = prompt("Rock, paper, scissors?");
-    return choice;
+function getHumanChoice() {
+    while (true) {
+        let choice = prompt("Rock, paper, scissors?");
+        if (choice === null || choice.trim() === "") {
+            alert("You must enter something!");
+            continue;
+        }
+
+        choice = choice.toLowerCase();
+        if (choice === "rock" || choice === "paper" || choice === "scissors") {
+            return choice;
+        } else {
+            alert("Unknown option not allowed. Please choose 'rock', 'paper', or 'scissors'.");
+        }
+    }
 }
 
-// console.log(computerChoice());
-console.log(getHumanChoice());
+function playRound(humanChoice, compChoice) {
+    if (humanChoice === compChoice) {
+        return "It's a tie!";
+    }
+
+    if (
+        (humanChoice === "rock" && compChoice === "scissors") ||
+        (humanChoice === "paper" && compChoice === "rock") ||
+        (humanChoice === "scissors" && compChoice === "paper")
+    ) {
+        playerScore++;
+        return "You win!";
+    } else {
+        computerScore++;
+        return "Computer wins!";
+    }
+}
+
+// Main Game
+console.log("Starting the game...");
+
+// Get player and computer choices for this round
+let playerChoice = getHumanChoice();
+let compChoice = computerChoice();
+
+console.log("Player chose: " + playerChoice);
+console.log("Computer chose: " + compChoice);
+
+let result = playRound(playerChoice, compChoice);
+console.log(result);
+multipleRounds();
+console.log("Computer score: " + computerScore);
+console.log("Human score: " + playerScore);
