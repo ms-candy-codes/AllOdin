@@ -47,6 +47,7 @@ function playRound(humanChoice, compChoice) {
         computerScore++;
         return "Computer wins!";
     }
+
 }
 
 // Main Game
@@ -61,6 +62,8 @@ console.log("Computer chose: " + compChoice);
 
 let result = playRound(playerChoice, compChoice);
 console.log(result);
-multipleRounds();
+console.log(result);
+console.log(playRound(playerChoice, compChoice));
+
 console.log("Computer score: " + computerScore);
 console.log("Human score: " + playerScore);
