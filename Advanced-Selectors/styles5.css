@@ -1,0 +1,15 @@
+a {
+    border: 5px solid grey;
+  }
+  /* Add styles here */
+  a[title="Visit example.com"]{
+    border-color: pink;
+  }
+
+  a[href*="contact"]{
+    border-color: orange;
+  }
+
+  [href^="http"]{
+    border-color: green;
+  }
