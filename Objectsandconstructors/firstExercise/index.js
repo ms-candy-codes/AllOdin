@@ -6,10 +6,13 @@ function Books(title, author, numOfPages,readOrNot, info){
     this.author = author;
     this.numOfPages = numOfPages;
     this.readOrNot = readOrNot;
-    this.info = title + " by " + author + ", " + numOfPages + ", "+ readOrNot + ".";
+    this.info = title + " by " + author + ", " + numOfPages +" pages, "+ readOrNot + ".";
 }
 
-const firstBook = new Books("the hobbit", "JJ something", "229 pages", "read");
-console.log(firstBook.info)
+const firstBook = new Books("the hobbit", "JJ something", "229", "read");
+console.log(firstBook.info);
+
+const secondBook = new Books("Harry Potter and the Socerer's Stone", "J. K. Rowling", "309", "Read");
+console.log(secondBook.info);
 
 
