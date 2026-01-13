@@ -1,0 +1,15 @@
+.grid-container{
+    background-color: rgb(254, 204, 212);
+    border: 1px solid plum;
+    display: grid;
+    gap: 4px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, minmax(150px, 200px));
+    overflow: auto;
+    padding: 4px;
+    resize: both;
+}
+
+.grid-item{
+    background-color: rgb(233, 233, 255);
+}
